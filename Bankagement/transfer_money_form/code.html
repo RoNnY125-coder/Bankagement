@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transfer Money Form</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-screen w-full max-w-[430px] mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<div class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Transfer Money</h2>
+</div>
+<div class="flex-1 overflow-y-auto pb-24">
+<!-- Header Section -->
+<div class="px-4 pt-6 pb-2">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Recipient Details</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Enter the information of the person you want to send money to.</p>
+</div>
+<!-- Recipient Name -->
+<div class="flex flex-col gap-4 px-4 py-3">
+<label class="flex flex-col w-full">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-semibold pb-2 px-1">Recipient Name</p>
+<input class="form-input flex w-full rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-600 p-4 text-base font-normal" placeholder="Enter full name" type="text"/>
+</label>
+</div>
+<!-- Bank Selection -->
+<div class="flex flex-col gap-4 px-4 py-3">
+<label class="flex flex-col w-full">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-semibold pb-2 px-1">Bank Name</p>
+<div class="relative flex w-full items-center">
+<input class="form-input flex w-full rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-600 p-4 text-base font-normal cursor-pointer" placeholder="Select bank" readonly="" type="text"/>
+<div class="absolute right-4 text-slate-400 pointer-events-none">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</label>
+</div>
+<div class="grid grid-cols-2 gap-2 px-4 py-3">
+<!-- Account Number -->
+<label class="flex flex-col w-full">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-semibold pb-2 px-1">Account Number</p>
+<input class="form-input flex w-full rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-600 p-4 text-base font-normal" placeholder="1234 5678" type="number"/>
+</label>
+<!-- IFSC Code -->
+<label class="flex flex-col w-full">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-semibold pb-2 px-1">IFSC Code</p>
+<input class="form-input flex w-full rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-600 p-4 text-base font-normal" placeholder="BANK0123456" type="text"/>
+</label>
+</div>
+<!-- Transfer Section -->
+<div class="px-4 pt-6 pb-2 mt-2">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Transfer Amount</h3>
+</div>
+<!-- Amount Input -->
+<div class="flex flex-col gap-4 px-4 py-3">
+<label class="flex flex-col w-full">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-semibold pb-2 px-1">Amount</p>
+<div class="relative flex w-full items-center">
+<span class="absolute left-4 text-slate-900 dark:text-white font-bold text-lg">$</span>
+<input class="form-input flex w-full rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 h-16 pl-10 pr-4 text-2xl font-bold placeholder:text-slate-400 dark:placeholder:text-slate-600" placeholder="0.00" type="number"/>
+</div>
+</label>
+</div>
+<!-- Remarks -->
+<div class="flex flex-col gap-4 px-4 py-3">
+<label class="flex flex-col w-full">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-semibold pb-2 px-1">Remarks (Optional)</p>
+<input class="form-input flex w-full rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-600 p-4 text-base font-normal" placeholder="e.g. Rent, Gift, Monthly bill" type="text"/>
+</label>
+</div>
+<!-- Balance Info -->
+<div class="mx-4 mt-2 p-4 rounded-xl bg-primary/10 border border-primary/20 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Available Balance</p>
+<p class="text-sm font-bold text-slate-900 dark:text-white">$12,450.80</p>
+</div>
+</div>
+</div>
+<!-- Footer Button -->
+<div class="absolute bottom-0 left-0 w-full p-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+                Continue
+            </button>
+</div>
+</div>
+</body></html>
